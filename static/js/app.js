@@ -27,6 +27,12 @@ $(function(){
 		$mField.val("");
 	})
 
+	socket.on('send-message',function(mess){
+		console.info("Message",mess);
+		mess.date = new Date(mess.date);
+		addMessage(mess);
+	})
+
 	function onMessageSubmit(messageText){
 		if(granted){
 			var mess = new Message(messageText,agent);
@@ -38,7 +44,7 @@ $(function(){
 			$mButton.val("Demande d'autorisation");
 			$mButton.prop("disabled",true);
 			$mField.prop("disabled",true);
-			socket.once("acces-granted",function(){
+			socket.once("access-granted",function(){
 				granted = true;
 				$mButton.val("Envoyer");
 				$mField.attr("placeholder","Votre message");

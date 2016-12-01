@@ -12,10 +12,11 @@ function onConnection(socket){
 	console.info("Socket connection on id "+socket.id)
 	socket.on('request-access', (obj) =>{
 		name = obj.name
+		console.info(name+" is requesting a conversation")
 		socket.emit('access-granted')
-		socket.emit('send_message', {
+		socket.emit('send-message', {
 			message : 'COUCOU !!!!!!! C\'EST MOI ALFRED !!!!',
-			time : new Date(),
+			date : new Date(),
 			author : 'Alfred'
 		})
 	})
@@ -24,16 +25,16 @@ function onConnection(socket){
 		for (var i = 0; i < messages.length; i++) {
 			socket.emit('send_message', {
 				message : messages[i],
-				time : new Date(),
+				date : new Date(),
 				author : name 
 			})
 		}
 	})
 
-	socket.on('send_message', (obj) => {
-		socket.emit('send_message', {
+	socket.on('send-message', (obj) => {
+		socket.emit('send-message', {
 			message : '...?!',
-			time : new Date(),
+			date : new Date(),
 			author : 'Alfred'
 		})
 	})
