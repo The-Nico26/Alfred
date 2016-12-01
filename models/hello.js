@@ -1,8 +1,8 @@
-const Message = require('../message')
+const Message = require('../Message')
 
 exports.regex = [
-	"bonjour",
-	"salut"
+	/bonjour/i,
+	/salut/i
 ]
 
 exports.perform = function(message,callback){

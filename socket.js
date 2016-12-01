@@ -1,5 +1,6 @@
 const socketio = require('socket.io')
-var io = null;
+const ia = require('./ia')
+var io = null
 
 function init(http){
 	io = socketio(http)
@@ -23,7 +24,7 @@ function onConnection(socket){
 
 	socket.on('get-history', (obj) => {
 		for (var i = 0; i < messages.length; i++) {
-			socket.emit('send_message', {
+			socket.emit('send-message', {
 				message : messages[i],
 				date : new Date(),
 				author : name 
@@ -32,10 +33,9 @@ function onConnection(socket){
 	})
 
 	socket.on('send-message', (obj) => {
-		socket.emit('send-message', {
-			message : '...?!',
-			date : new Date(),
-			author : 'Alfred'
+		ia.think(obj, (message)=> {
+			socket.emit('send-message', 
+				message)
 		})
 	})
 }

@@ -1,4 +1,4 @@
-module.exports = Message(message,author,date){
+module.exports = function Message(message,author,date){
 	if(date){
 		this.date = date;
 	} else {

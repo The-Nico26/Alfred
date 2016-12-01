@@ -3,9 +3,11 @@ const app = express()
 const http = require("http").Server(app)
 const socket = require("./socket")
 const db = require("./database")
+const ia = require("./ia")
 
 //db.init()
 socket.init(http)
+ia.init()
 
 app.use("/static",express.static(__dirname+"/static"))
 
