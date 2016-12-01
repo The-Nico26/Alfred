@@ -2,7 +2,9 @@ const express = require("express")
 const app = express()
 const http = require("http").Server(app)
 const socket = require("./socket")
+const db = require("./database")
 
+//db.init()
 socket.init(http)
 
 app.use("/static",express.static(__dirname+"/static"))
