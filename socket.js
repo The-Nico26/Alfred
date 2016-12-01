@@ -32,7 +32,7 @@ function onConnection(socket){
 
 	socket.on('send_message', (obj) => {
 		socket.emit('send_message', {
-			message : 'Attendez monsieur, je cherche. ...?!',
+			message : '...?!',
 			time : new Date(),
 			author : 'Alfred'
 		})
