@@ -6,5 +6,5 @@ exports.regex = [
 ]
 
 exports.perform = function(message,callback){
-	callback(new Message("Bonjour agent","Alfred"))	
+	callback(new Message("Bonjour THE agent","Alfred"))	
 }
