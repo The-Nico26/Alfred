@@ -2,15 +2,26 @@
 <html>
 <head>
 	<title>Homepage</title>
+	<style type="text/css">
+		.template{
+			display: none;
+		}
+	</style>
 </head>
 <body>
 <div id="messagesContainer">
 </div>
 <form id="messageForm">
-	<input type="text" name="message" id="messageField">
-	<input type="submit" value="Envoyer">
+	<input type="text" name="message" id="messageField" placeholder="Entrez votre nom d'agent">
+	<input type="submit" value="Parler à Alfred" id="messageButton">
 </form>
+<div class="template" id="messageTemplate">
+	<div class="message" data-date="{{message.date}}">
+		<span>{{dateForm}}</span> <span class="author">{{message.author}}</span> : <span>{{message.message}}</span>
+	</div>
+</div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/static/js/app.js"></script>
 </body>

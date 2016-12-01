@@ -8,6 +8,9 @@ function init(http){
 
 function onConnection(socket){
 	console.info("Socket connection on id "+socket.id)
+	socket.on('request-access',(obj) => {
+
+	})
 }
 
 exports.init = init;

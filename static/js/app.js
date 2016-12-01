@@ -1,15 +1,22 @@
-function Message(message,date){
+function Message(message,author,date){
 	if(date){
 		this.date = date;
 	} else {
 		this.date = new Date();
 	}
+	this.author = author;
 	this.message = message;
 }
 
 $(function(){
+	var agent = "Smith";
+	var granted = false;
+
 	$mField = $("#messageField");
+	$mButton = $("#messageButton");
 	$mForm = $("#messageForm");
+	$mButton.prop("disabled",false);
+	$mField.prop("disabled",false);
 	var socket = io();
 	$mField.focus();
 	console.info("Socket connected and Jquery loaded");
@@ -21,6 +28,35 @@ $(function(){
 	})
 
 	function onMessageSubmit(messageText){
-		console.log(new Message(messageText));
+		if(granted){
+			var mess = new Message(messageText,agent);
+			socket.emit('send-message',{
+				message: mess
+			});
+			addMessage(mess);
+		} else {
+			$mButton.val("Demande d'autorisation");
+			$mButton.prop("disabled",true);
+			$mField.prop("disabled",true);
+			socket.once("acces-granted",function(){
+				granted = true;
+				$mButton.val("Envoyer");
+				$mField.attr("placeholder","Votre message");
+				$mButton.prop("disabled",false);
+				$mField.prop("disabled",false);
+			});
+			socket.emit("request-access",{name:messageText});
+		}
+	}
+
+	function addMessage(message){
+		$("#messagesContainer").append(Mustache.render($("#messageTemplate").html(),{
+			dateForm: formatDate(message.date),
+			message: message
+		}));
+	}
+
+	function formatDate(date){
+		return date.getDate()+"/"+(date.getMonth()+1)+" "+(date.getHours()+1)+":"+(date.getMinutes()+1);
 	}
 })
