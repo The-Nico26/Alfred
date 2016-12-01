@@ -1,9 +1,17 @@
-const express = require("express");
+const express = require("express")
+const app = express()
+const http = require("http").Server(app)
+const socket = require("./socket")
 
-const app = express();
+socket.init(http)
+
+app.use("/static",express.static(__dirname+"/static"))
 
 app.get("/",(req,res) => {
-	res.end("La page d'index !");
-});
+	console.info("Index request from "+req.connection.remoteAddress)
+	res.sendFile(__dirname+"/views/home.html")
+})
 
-app.listen(80)
+http.listen(80, () => {
+	console.info("Listening on *:80")
+})
