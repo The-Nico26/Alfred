@@ -19,6 +19,24 @@ function onConnection(socket){
 			author : 'Alfred'
 		})
 	})
+
+	socket.on('get-history', (obj) => {
+		for (var i = 0; i < messages.length; i++) {
+			socket.emit('send_message', {
+				message : messages[i],
+				time : new Date(),
+				author : name 
+			})
+		}
+	})
+
+	socket.on('send_message', (obj) => {
+		socket.emit('send_message', {
+			message : 'Attendez monsieur, je cherche. ...?!',
+			time : new Date(),
+			author : 'Alfred'
+		})
+	})
 }
 
 exports.init = init;
