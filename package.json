@@ -1,0 +1,23 @@
+{
+  "name": "alfred",
+  "version": "1.0.0",
+  "description": "An IA for the C.G.I.E.L.D agents",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Nico26/Alfred.git"
+  },
+  "author": "Baptiste Saclier; Nicolas Mazard; Alexis Rangheard; Dimitri Vallas",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/The-Nico26/Alfred/issues"
+  },
+  "homepage": "https://github.com/The-Nico26/Alfred#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.7.1"
+  }
+}
