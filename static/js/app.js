@@ -58,6 +58,7 @@ $(function(){
 				agent = messageText;
 				granted = true;
 				$(".loginBox").addClass("hidden");
+				$mField.focus();
 			});
 			socket.emit("request-access",{name:messageText});
 		}
