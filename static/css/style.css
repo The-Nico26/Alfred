@@ -26,7 +26,7 @@
     right: 0;
     font-size: 30px;
     padding: 10px;
-    color: #668293;
+    color: rgba(0,0,0,0.5);
     cursor: pointer;
     font-weight: bolder;
 }
