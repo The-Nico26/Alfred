@@ -19,7 +19,6 @@ exports.perform = function(message,socket){
 	}
 	request(wikiSerachOptions,(err,res,result) => {
 		try{
-			console.log(result)
 			result = JSON.parse(result)
 			if(result[2].length > 0){
 				socket.sendMessage("C'est bon, j'ai trouvé !")
