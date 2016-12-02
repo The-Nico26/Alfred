@@ -59,7 +59,7 @@ exports.regex = [
 	/kamoulox/i,
 ]
 
-exports.perform = function(message,callback){
+exports.perform = function(message,socket){
 	var word = words[Math.round(Math.random()*(words.length-1))]
-	callback(new Message(word.toUpperCase()+" !!!","Alfred"))	
+	socket.sendMessage(word.toUpperCase()+" !!!")	
 }

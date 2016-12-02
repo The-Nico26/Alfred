@@ -7,5 +7,5 @@ exports.regex = [
 ]
 
 exports.perform = function(message,socket){
-	socket.emit("send-message", new Message("Bonjour agent "+message.author, "Alfred"))
+	socket.sendMessage("Bonjour agent "+message.author)
 }

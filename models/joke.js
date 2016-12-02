@@ -15,5 +15,5 @@ exports.regex = [
 
 exports.perform = function(message,callback){
 	var joke = jokes[Math.round(Math.random()*(jokes.length-1))]
-	socket.emit("send-message", new Message(joke,"Alfred"))	
+	socket.sendMessage(joke)	
 }

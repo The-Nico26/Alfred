@@ -5,8 +5,8 @@ exports.regex = [
 ]
 
 exports.perform = function(message,socket){
-	socket.emit("send-message", new Message("Commande existantes : ","Alfred"))	
-	socket.emit("send-message", new Message("- Raconte moi une blague","Alfred"))
-	socket.emit("send-message", new Message("- Au revoir","Alfred"))
-	socket.emit("send-message", new Message("- kamoulox","Alfred"))
+	socket.sendMessage("Commande existantes : ")
+	socket.sendMessage("- Raconte moi une blague")
+	socket.sendMessage("- Au revoir")
+	socket.sendMessage("- kamoulox")
 }
