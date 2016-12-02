@@ -6,9 +6,9 @@ var jokes = [
 
 exports.regex = [
 	/raconte moi une blague/i,
-	/diverti[es]? moi/i,
+	/diverti[es]?[- ]moi/i,
 	/connais[- ]tu une blague( \?)?/i,
-	/fais moi rire( !)?/
+	/fais moi rire( !)?/i
 ]
 
 exports.perform = function(message,socket){

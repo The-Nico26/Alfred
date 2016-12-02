@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *
 {
     margin:0;
@@ -57,13 +58,25 @@ input[type=submit]{
     font-weight: bold;
     font-family:Verdana;
 
+=======
+#messageForm
+{
+    width: 100%;
+    flex-direction: column;
 }
 
-label {
-    cursor: default;
-    font-size: 1.5em;
+#messagesContainer
+{
+    width: 100%;
+>>>>>>> 661c13eb1c8432a68df62980d594dba3017dcae4
 }
 
+.alfredImage
+{
+    display: none;
+}
+
+<<<<<<< HEAD
 .messages
 {
     color: white;
@@ -105,4 +118,9 @@ label {
 {
     flex: 1 1 auto;
     overflow: auto;
+=======
+.lightbox
+{
+	flex-direction: column;
+>>>>>>> 661c13eb1c8432a68df62980d594dba3017dcae4
 }

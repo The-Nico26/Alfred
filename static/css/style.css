@@ -2,7 +2,9 @@
 {
     margin:0;
     padding: 0;
+    font-family: sans-serif !important;
 }
+
 .body 
 {
 	background-color: #2F3F49;
@@ -15,20 +17,6 @@
 	
 }
 
-input[type=text]{
-	width: 500px;
-	padding: 12px 20px;
-    margin: 8px 10px;
-    border: none;
-    border-bottom: 5px solid #3378AE;
-    color: black;
-    font-size: 1.3em;
-    font-weight: bold;
-    font-family:Verdana;
-    -webkit-transition: all 0.3s linear;
-    transition: all 0.3s linear;
-}
-
 
 a img {
   border: 0;
@@ -36,14 +24,14 @@ a img {
 
 
 
-input:focus {
+/*input:focus {
     border: 5px solid #633C28;
     padding: 12px 20px;
     border-bottom: 7px solid #633C28;
     border-radius: 4px;
     color: #333333;
     outline:  none;
-}
+}*/
 
 input[type=submit]{
     background-color: #A16B33;
@@ -57,7 +45,6 @@ input[type=submit]{
     margin: 8px 10px;
     font-size: 1.5em;
     font-weight: bold;
-    font-family:Verdana;
 
 }
 
@@ -81,21 +68,13 @@ label {
 
 }
 
-.date
-{
-
-}
-
 .message
 {
     background-color: #3C85A2;
-    width: 720px;
-    margin: 5px;
+    width: 100%;
+    margin-bottom: 5px;
     padding: 5px;
-}
-
-.message *
-{
+    box-sizing: border-box;
     text-align: left;
 }
 
@@ -108,4 +87,51 @@ label {
 {
     flex: 1 1 auto;
     overflow: auto;
+    width: 50%;
+}
+
+#messageForm
+{
+    width: 75%;
+    display: flex;
+}
+
+input[type="text"]
+{
+    flex: 1 1 auto;
+    padding: 12px 20px;
+    margin: 8px 10px;
+    border: none;
+    border-bottom: 5px solid #3378AE;
+    color: black;
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family:Verdana;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.loginBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2F3F49;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #d0dae0;
+    text-align: center;
+}
+
+.loginBox.hidden
+{
+    display: none;
+}
+
+.loginBox p
+{
+    margin-bottom: 10%;
 }
