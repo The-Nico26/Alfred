@@ -1,4 +1,13 @@
 const fs = require("fs")
+const unknownSentences = [
+	"Pardon ? je n'ai pas compris...",
+	"Heuu... Agent ? je ne comprends pas...",
+	"Je ne sait pas quoi faire...",
+	"Je suis confu... mais je ne comprends pas",
+	"Excusez moi, je ne sait pas quoi répondre :s",
+	"Essayez vous de communiquer avec moi ?",
+	"KAMOULOX !!!"
+]
 var allRegex = [];
 
 function init(){
@@ -18,6 +27,7 @@ function think(message, socket){
 			}	
 		}
 	}
+	socket.sendMessage(unknownSentences[Math.round(Math.random()*(unknownSentences.length-1))])
 }
 
 exports.init = init
