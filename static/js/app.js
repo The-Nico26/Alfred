@@ -61,6 +61,7 @@ $(function(){
 			dateForm: formatDate(message.date),
 			message: message
 		}));
+		$('#messagesContainer').animate({scrollTop: $('#messagesContainer').prop('scrollHeight')});
 	}
 
 	function formatDate(date){
