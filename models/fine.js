@@ -7,7 +7,7 @@ var fineSentences = [
 exports.regex = [
 	/comment [çcs]a va( \?)?/i,
 	/[çcs]a va( \?)?/i,
-	/comment va[- ]tu( \?)?/i
+	/comment vas?[- ]tu( \?)?/i
 
 ]
 
