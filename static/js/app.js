@@ -9,7 +9,7 @@ function Message(message,author,date){
 }
 
 $(function(){
-	var agent = "Smith";
+	var agent = null;
 	var granted = false;
 
 	$mField = $("#messageField");
@@ -45,6 +45,7 @@ $(function(){
 			$mButton.prop("disabled",true);
 			$mField.prop("disabled",true);
 			socket.once("access-granted",function(){
+				agent = messageText;
 				granted = true;
 				$mButton.val("Envoyer");
 				$mField.attr("placeholder","Votre message");
