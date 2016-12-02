@@ -1,5 +1,3 @@
-const Message = require('../Message')
-
 exports.regex = [
 	/(au )?revoir/i,
 	/bye/i,

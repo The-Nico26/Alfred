@@ -1,5 +1,3 @@
-const Message = require('../Message')
-
 var words = [
 	"Parapluie",
 	"Beignet",
