@@ -1,4 +1,4 @@
-var insulte = [
+var insultes = [
 	"C'est n'est pas correct ",
 	"Surveille ton langage gamin ",
 	"Ta mère ne serait pas fier ",
