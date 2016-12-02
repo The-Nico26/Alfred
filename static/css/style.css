@@ -122,6 +122,7 @@ input[type="text"]
     justify-content: center;
     flex-direction: column;
     color: #d0dae0;
+    text-align: center;
 }
 
 .loginBox.hidden

@@ -13,3 +13,8 @@
 {
     display: none;
 }
+
+.lightbox
+{
+	flex-direction: column;
+}
