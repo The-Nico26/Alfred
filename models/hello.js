@@ -1,7 +1,9 @@
 exports.regex = [
 	/bonjour/i,
 	/salut/i,
-	/coucou/i
+	/coucou/i,
+	/hello/i,
+	/hey/i
 ]
 
 exports.perform = function(message,socket){
