@@ -41,7 +41,7 @@ $(function(){
 	})
 
 	function onMessageSubmit(messageText){
-		if(granted){
+		if(granted && messageText != ""){
 			var mess = new Message(messageText,agent);
 			socket.emit('send-message',{
 				message: mess
