@@ -4,6 +4,9 @@ exports.regex = [
 	/help/
 ]
 
-exports.perform = function(message,callback){
-	socket.emit("send-message", new Message("En cours","Alfred"))	
+exports.perform = function(message,socket){
+	socket.emit("send-message", new Message("Commande existantes : ","Alfred"))	
+	socket.emit("send-message", new Message("- Raconte moi une blague","Alfred"))
+	socket.emit("send-message", new Message("- Au revoir","Alfred"))
+	socket.emit("send-message", new Message("- kamoulox","Alfred"))
 }
