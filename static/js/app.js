@@ -15,8 +15,8 @@ $(function(){
 	$mField = $("#messageField");
 	$mButton = $("#messageButton");
 	$mForm = $("#messageForm");
-	$mButton.prop("disabled",false);
-	$mField.prop("disabled",false);
+	$aField = $("#agentField");
+	$aForm = $("#agentForm");
 	var socket = io();
 	$mField.focus();
 	console.info("Socket connected and Jquery loaded");
@@ -24,6 +24,12 @@ $(function(){
 	$mForm.on('submit',function(e){
 		e.preventDefault();
 		onMessageSubmit($mField.val());
+		$mField.val("");
+	})
+
+	$aForm.on('submit',function(e){
+		e.preventDefault();
+		onAgentConnect($aField.val());
 		$mField.val("");
 	})
 
@@ -40,17 +46,18 @@ $(function(){
 				message: mess
 			});
 			addMessage(mess);
-		} else {
-			$mButton.val("Demande d'autorisation");
-			$mButton.prop("disabled",true);
-			$mField.prop("disabled",true);
+		}
+	}
+
+	function onAgentConnect(messageText){
+		if(!granted){
+		$aForm.find("input").prop("disabled",true)
+		$aField.val("");
+		$aField.attr("placeholder","Demande d'autorisation");
 			socket.once("access-granted",function(){
 				agent = messageText;
 				granted = true;
-				$mButton.val("Envoyer");
-				$mField.attr("placeholder","Votre message");
-				$mButton.prop("disabled",false);
-				$mField.prop("disabled",false);
+				$(".loginBox").addClass("hidden");
 			});
 			socket.emit("request-access",{name:messageText});
 		}

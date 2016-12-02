@@ -95,7 +95,7 @@ label {
     display: flex;
 }
 
-#messageForm input[type="text"]
+input[type="text"]
 {
     flex: 1 1 auto;
     padding: 12px 20px;
@@ -108,4 +108,28 @@ label {
     font-family:Verdana;
     -webkit-transition: all 0.3s linear;
     transition: all 0.3s linear;
+}
+
+.loginBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2F3F49;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #d0dae0;
+}
+
+.loginBox.hidden
+{
+    display: none;
+}
+
+.loginBox p
+{
+    margin-bottom: 10%;
 }
