@@ -17,6 +17,7 @@ $(function(){
 	$mForm = $("#messageForm");
 	$aField = $("#agentField");
 	$aForm = $("#agentForm");
+	$aField.focus();
 	var socket = io();
 	$mField.focus();
 	console.info("Socket connected and Jquery loaded");

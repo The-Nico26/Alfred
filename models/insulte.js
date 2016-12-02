@@ -13,7 +13,6 @@ exports.regex = [
 	/nique/i,
 	/gueule/i,
 	/foutre/i,
-	/suce/i,
 	/merde/i,
 
 ]
