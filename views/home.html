@@ -2,27 +2,40 @@
 <html>
 <head>
 	<title>Homepage</title>
-	<style type="text/css">
-		.template{
-			display: none;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="stylesheet" media="screen and (max-width: 600px)" href="/static/css/stylemobile.css" /> <!-- Pour ceux qui ont une résolution inférieure à 600px -->
+
+	<meta name="viewport" content="width=device-width"/>
 </head>
 <body>
+<div class="body">
+	
+
+<div>
+<img src="/static/img/alfred.png" alt="alfred" title="tu veux quoi toi?" />
+</div>
 <div id="messagesContainer">
 </div>
+
 <form id="messageForm">
 	<input type="text" name="message" id="messageField" placeholder="Entrez votre nom d'agent">
 	<input type="submit" value="Parler à Alfred" id="messageButton">
 </form>
+
+
 <div class="template" id="messageTemplate">
 	<div class="message" data-date="{{message.date}}">
-		<span>{{dateForm}}</span> <span class="author">{{message.author}}</span> : <span>{{message.message}}</span>
+		<span class="author">{{message.author}}</span><!--<span class="date">{{dateForm}}</span> --><br />
+		<span class="messages">{{message.message}}</span><br />
 	</div>
 </div>
+
+	
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/static/js/app.js"></script>
+
+</div>
 </body>
 </html>
