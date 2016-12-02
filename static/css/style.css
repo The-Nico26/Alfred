@@ -13,25 +13,34 @@
     align-items:center;
     min-height: 100vh;
     max-height: 100vh;
-
-	
+    width: 100vw;
+    position: absolute;
+	top: 0;
+    left: 0;
 }
 
+.helpButton
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    padding: 10px;
+    color: #668293;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.alfredImage
+{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
 
 a img {
   border: 0;
 }
-
-
-
-/*input:focus {
-    border: 5px solid #633C28;
-    padding: 12px 20px;
-    border-bottom: 7px solid #633C28;
-    border-radius: 4px;
-    color: #333333;
-    outline:  none;
-}*/
 
 input[type=submit]{
     background-color: #A16B33;
@@ -134,4 +143,17 @@ input[type="text"]
 .loginBox p
 {
     margin-bottom: 10%;
+}
+
+@media screen and (max-width: 1000px)
+{       
+    .alfredImage
+    {
+        display: none;
+    }
+
+    #messagesContainer
+    {
+        width: 75%;
+    }
 }

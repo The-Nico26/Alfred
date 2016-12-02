@@ -34,6 +34,11 @@ $(function(){
 		$mField.val("");
 	})
 
+	$(".helpButton").on('click',function(e){
+		e.preventDefault();
+		$mField.val("Que puis-je dire ?");
+	})
+
 	socket.on('send-message',function(mess){
 		console.info("Message",mess);
 		mess.date = new Date(mess.date);

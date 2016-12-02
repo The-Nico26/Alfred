@@ -3,25 +3,24 @@
 <head>
 	<title>Alfred</title>
 	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
-	<link rel="stylesheet" media="screen and (max-width: 600px)" href="/static/css/stylemobile.css" /> <!-- Pour ceux qui ont une résolution inférieure à 600px -->
+	<link rel="stylesheet" media="screen and (max-width: 600px)" href="/static/css/stylemobile.css" />
 
 	<meta name="viewport" content="width=device-width"/>
 </head>
 <body>
+
 <div class="body">
-	
-
-<div class="alfredImage">
-<img src="/static/img/alfred.png" alt="alfred" title="tu veux quoi toi?" />
-</div>
-<div id="messagesContainer">
-</div>
-
-<form id="messageForm">
-	<input type="text" name="message" id="messageField" placeholder="Votre message">
-	<input type="submit" value="Envoyer" id="messageButton">
-</form>
-
+	<div class="helpButton">
+		?
+	</div>
+	<div class="alfredImage">
+		<img src="/static/img/alfred.png" alt="alfred" title="tu veux quoi toi?" />
+	</div>
+	<div id="messagesContainer"></div>
+	<form id="messageForm">
+		<input type="text" name="message" id="messageField" placeholder="Votre message">
+		<input type="submit" value="Envoyer" id="messageButton">
+	</form>
 </div>
 
 <div class="loginBox">
@@ -32,7 +31,7 @@
 
 <div class="template" id="messageTemplate">
 	<div class="message" data-date="{{message.date}}">
-		<span class="author">{{message.author}}</span><!--<span class="date">{{dateForm}}</span> --><br />
+		<span class="author">{{message.author}}</span><br />
 		<span class="messages">{{message.message}}</span><br />
 	</div>
 </div>
