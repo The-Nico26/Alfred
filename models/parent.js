@@ -1,6 +1,6 @@
 exports.regex = [
-	/qui sont des parents? ?\?/i,
-	/as-? ?tu des parents? ?\?/i
+	/qui sont tes parents? ?\??/i,
+	/as-? ?tu tes parents? ?\??/i
 ]
 
 exports.perform = function(message,socket){

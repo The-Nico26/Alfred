@@ -1,5 +1,5 @@
 exports.regex = [
-	/Quel age as-tu ?\?/i
+	/Quel ages? as[- ]tu ?\?/i
 ]
 
 exports.perform = function(message,socket){

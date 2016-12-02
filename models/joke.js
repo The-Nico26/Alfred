@@ -11,7 +11,7 @@ exports.regex = [
 	/fais moi rire( !)?/
 ]
 
-exports.perform = function(message,callback){
+exports.perform = function(message,socket){
 	var joke = jokes[Math.round(Math.random()*(jokes.length-1))]
 	socket.sendMessage(joke)	
 }
