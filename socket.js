@@ -33,10 +33,7 @@ function onConnection(socket){
 	})
 
 	socket.on('send-message', (obj) => {
-		ia.think(obj, (message)=> {
-			socket.emit('send-message', 
-				message)
-		})
+		ia.think(obj, socket)
 	})
 }
 

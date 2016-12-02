@@ -5,5 +5,5 @@ exports.regex = [
 ]
 
 exports.perform = function(message,callback){
-	callback(new Message("","Alfred"))	
+	socket.emit("send-message", new Message("En cours","Alfred"))	
 }

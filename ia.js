@@ -8,12 +8,12 @@ function init(){
 	}
 }
 
-function think(message, callback){
+function think(message, socket){
 	for (var i = allRegex.length - 1; i >= 0; i--) {
 		for (var x = allRegex[i].regex.length - 1; x >= 0; x--) {
 			var regex = allRegex[i].regex[x];
 			if(regex.test(message.message.message)){
-				allRegex[i].perform(message.message, callback)
+				allRegex[i].perform(message.message, socket)
 				return;
 			}	
 		}

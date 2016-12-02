@@ -6,6 +6,6 @@ exports.regex = [
 	/[àa] plus/i
 ]
 
-exports.perform = function(message,callback){
-	callback(new Message("Au revoir agent "+message.author,"Alfred"))	
+exports.perform = function(message,socket){
+	socket.emit("send-message", new Message("Au revoir agent "+message.author,"Alfred"))	
 }
